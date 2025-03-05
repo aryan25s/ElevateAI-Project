@@ -8,8 +8,13 @@ def main():
     )
     
     # Your content
-    st.title("Elevate.AI")
-    st.header("Elevating businesses by leveraging LLMs")
+    st.title("About me")
+    st.header("Hello Everyone,I'm Kartkeya Prasad")
+    st. write(
+        """
+     I'm currently purusing my undergraduation in artifical intelligence and machine learning.
+"""
+    )
 
 
 # REQUIRED: This makes the page work
