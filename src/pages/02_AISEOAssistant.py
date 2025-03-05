@@ -28,7 +28,10 @@ model = genai.GenerativeModel(
   generation_config=generation_config,
 )
 
-
+st.set_page_config(
+        page_title="About Elevate.AI",
+        page_icon="🎈"
+    )
 st.title("AI SEO Assistant with Gemini API")
 st.subheader("Leverage AI to optimize your content for SEO")
 
