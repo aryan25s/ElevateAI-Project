@@ -15,7 +15,7 @@ def main():
     def local_css(file_name):
         with open(file_name) as f:
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    local_css("styles/style.css")  # Not absolute path!
+    local_css("D:/NewElevate.ai/Newelevateai/src/styles/style.css")  # Not absolute path!
     
     # Animation
     animation_symbol = "❄"
