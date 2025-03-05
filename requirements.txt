@@ -3,3 +3,4 @@ streamlit
 langchain_google_genai
 chromadb
 google-generativeai
+langchain-community
