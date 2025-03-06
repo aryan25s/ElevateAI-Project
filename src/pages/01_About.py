@@ -19,11 +19,12 @@ def main():
         page_icon="🎓",
         layout="wide"
     )
+    
     # content
     # --- Header Section ---
     col1, col2 = st.columns([1, 2])
     with col1:
-        img_path = "images/image01.jpg"  # Assuming images folder is in the same directory
+        img_path = "Images/image01.jpg"  # Assuming images folder is in the same directory
         profile_img = load_image(img_path)
         if profile_img:
             st.image(profile_img, width=250, caption="Profile Picture")
@@ -92,7 +93,7 @@ def main():
         - Developed novel hybrid model using Unet 
         - Achieved 98% accuracy
         """)
-        img_path = "images/Image02.jpg"  # Assuming images folder is in the same directory
+        img_path = "Images/Image02.jpg"  # Assuming images folder is in the same directory
         profile_img2 = load_image(img_path)
         if profile_img2:
             st.image(profile_img2, width=300, caption="SIH")
@@ -103,7 +104,7 @@ def main():
         - Lead for communiy 2024-25
         - Responsible for orchestrating events
         """)
-        img_path = "images/Image03.jpg"  # Assuming images folder is in the same directory
+        img_path = "Images/Image03.jpg"  # Assuming images folder is in the same directory
         profile_img = load_image(img_path)
         if profile_img2:
             st.image(profile_img2, width=300, caption="Community image")
