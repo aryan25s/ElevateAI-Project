@@ -1,18 +1,34 @@
 import streamlit as st
 from PIL import Image
+import os
 
+def load_image(image_path):
+    """Safe image loading with error handling"""
+    try:
+        return Image.open(image_path)
+    except FileNotFoundError:
+        st.error(f"Image not found: {image_path}")
+        return None
+    except Exception as e:
+        st.error(f"Error loading image: {str(e)}")
+        return None
+    
 def main():
     st.set_page_config(
         page_title="Kartikeya Prasad - Portfolio",
         page_icon="🎓",
         layout="wide"
     )
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    images_dir = os.path.join(base_dir, "images")
     # content
     # --- Header Section ---
     col1, col2 = st.columns([1, 2])
     with col1:
-        profile_img = Image.open(r"D:\\NewElevate.ai\\Newelevateai\\src\\Images\\image01.jpg")
-        st.image(profile_img, width=250)
+        img_path = os.path.join(images_dir, "image01.jpg")
+        profile_img = load_image(img_path)
+        if profile_img:
+            st.image(profile_img, width=250, caption="Profile Picture")
     with col2:
         st.title("Kartikeya Prasad")
         st.header("AI/ML Undergraduate Student")
@@ -78,8 +94,10 @@ def main():
         - Developed novel hybrid model using Unet 
         - Achieved 98% accuracy
         """)
-        profile_img2 = Image.open(r"D:\\NewElevate.ai\\Newelevateai\\src\\Images\\Image02.jpg")
-        st.image(profile_img2, width=300)
+        img_path = os.path.join(images_dir, "Image02.jpg")
+        profile_img2 = load_image(img_path)
+        if profile_img2:
+            st.image(profile_img2, width=300, caption="SIH image")
 
     with st.expander("Community Leader"):
         st.write("""
@@ -87,8 +105,10 @@ def main():
         - Lead for communiy 2024-25
         - Responsible for orchestrating events
         """)
-        profile_img3 = Image.open(r"D:\\NewElevate.ai\\Newelevateai\\src\\Images\\Image03.jpg")
-        st.image(profile_img3, width=400)
+        img_path = os.path.join(images_dir, "Image03.jpg")
+        profile_img2 = load_image(img_path)
+        if profile_img2:
+            st.image(profile_img2, width=300, caption="Community image")
     
     # --- Footer ---
     st.markdown("---")
