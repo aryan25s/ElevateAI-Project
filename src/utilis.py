@@ -10,7 +10,7 @@ import os
 
 from dotenv import load_dotenv
 load_dotenv()  # Load before using the API key
-api_key = os.getenv("Google_Gemini_key")
+api_key = os.getenv("GOOGLE_API_KEY")
 
 # Set your Google Gemini API Key
 google_gemini_key = api_key
