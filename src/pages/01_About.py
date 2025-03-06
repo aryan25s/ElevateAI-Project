@@ -19,13 +19,11 @@ def main():
         page_icon="🎓",
         layout="wide"
     )
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    images_dir = os.path.join(base_dir, "images")
     # content
     # --- Header Section ---
     col1, col2 = st.columns([1, 2])
     with col1:
-        img_path = os.path.join(images_dir, "image01.jpg")
+        img_path = "images/image01.jpg"  # Assuming images folder is in the same directory
         profile_img = load_image(img_path)
         if profile_img:
             st.image(profile_img, width=250, caption="Profile Picture")
@@ -94,10 +92,10 @@ def main():
         - Developed novel hybrid model using Unet 
         - Achieved 98% accuracy
         """)
-        img_path = os.path.join(images_dir, "Image02.jpg")
+        img_path = "images/Image02.jpg"  # Assuming images folder is in the same directory
         profile_img2 = load_image(img_path)
         if profile_img2:
-            st.image(profile_img2, width=300, caption="SIH image")
+            st.image(profile_img2, width=300, caption="SIH")
 
     with st.expander("Community Leader"):
         st.write("""
@@ -105,8 +103,8 @@ def main():
         - Lead for communiy 2024-25
         - Responsible for orchestrating events
         """)
-        img_path = os.path.join(images_dir, "Image03.jpg")
-        profile_img2 = load_image(img_path)
+        img_path = "images/Image03.jpg"  # Assuming images folder is in the same directory
+        profile_img = load_image(img_path)
         if profile_img2:
             st.image(profile_img2, width=300, caption="Community image")
     
