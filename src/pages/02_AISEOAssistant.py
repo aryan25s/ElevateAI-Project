@@ -10,7 +10,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()  # Load before using the API key
 try:
-    # Use standard environment variable name
+    
     api_key = os.getenv("GOOGLE_API_KEY")
     
     if not api_key:
@@ -37,7 +37,7 @@ model = genai.GenerativeModel(
 
 st.set_page_config(
         page_title="About Elevate.AI",
-        page_icon="🎈"
+        page_icon="👩‍💻"
     )
 st.title("AI SEO Assistant with Gemini API")
 st.subheader("Leverage AI to optimize your content for SEO")

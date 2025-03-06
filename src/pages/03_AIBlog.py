@@ -6,9 +6,13 @@ from dotenv import load_dotenv
 load_dotenv()  # Load before using the API key
 api_key = os.getenv("GOOGLE_API_KEY")
 
-# Set your Google Gemini API Key
+# Setting Google Gemini API Key
 google_gemini_key = api_key
 genai.configure(api_key=google_gemini_key)
+st.set_page_config(
+        page_title="AI Blog",
+        page_icon="🧑‍🎓"
+    )
 st.title("Blogcraft : Your AI Writing Companion")
 
 # Create the model
@@ -24,6 +28,7 @@ model = genai.GenerativeModel(
   model_name="gemini-1.5-flash",
   generation_config=generation_config,
 )
+
 
 st.subheader("Now you can Craft Perfect Blogs with the help of AI")
 

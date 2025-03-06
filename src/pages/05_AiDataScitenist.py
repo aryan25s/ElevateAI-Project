@@ -16,49 +16,49 @@ api_key = os.getenv("GOOGLE_API_KEY")
 # Set your Google Gemini API Key
 google_gemini_key = api_key
 genai.configure(api_key=google_gemini_key)
-with st.sidebar:
-    st.write("*Unleash the power of your data with my AI assistance!*")
-    st.caption("""I'm ready to dive deep into your numbers, uncover hidden patterns, and deliver actionable insights. But first, we need a solid foundation. 
-             Please upload your CSV file 📂 so we can embark on this data-driven journey together. 
-             Let's transform your raw information into valuable knowledge.Sounds fun right , let's go!!
-             """)
-    with st.expander("What are the steps for EDA"):
-       st.write(
-           #llm.invoke("What are the steps for EDA").content
-           )
-    st.divider()
-    st.caption("<p style ='text-align:center'>Made with ❤️ by Kartikeya</p>",unsafe_allow_html=True)
-
-
 def main():
-    st.title("Ask your csv")
-    st.subheader("")
+    st.set_page_config(page_title="AI Data Scientist", page_icon="🤖")
+    st.title("AI Data Scientist Assistant")
+    
+    with st.sidebar:
+        st.write("*Unleash the power of your data!*")
+        st.caption("""Upload your CSV file to analyze patterns and generate insights.""")
+        st.divider()
+        st.caption("<p style='text-align:center'>Made with ❤️ by Kartikeya</p>", unsafe_allow_html=True)
 
-    user_csv = st.file_uploader(
-        "upload your csv file ",
-        type="csv"
-    )
-    if user_csv is not None:
-        user_question = st.text_input("Ask a question about your csv: ")
+    # File uploader
+    user_csv = st.file_uploader("Upload CSV", type="csv")
+    
+    if user_csv:
+        # Read CSV to DataFrame
+        df = pd.read_csv(user_csv)
+        st.write("Data Preview:")
+        st.dataframe(df.head())
+        
+        # Initialize LLM
         llm = ChatGoogleGenerativeAI(
             model="gemini-1.5-flash",
-            temperature=0.9,
-            api_key=google_gemini_key
-    
+            temperature=0.6,  
+            google_api_key=api_key
         )
-        agent = create_csv_agent(
+        
+        # Create agent
+        agent = create_pandas_dataframe_agent(
             llm,
-            user_csv,
+            df,
             verbose=True,
             allow_dangerous_code=True
-
         )
-        if user_question is not None and user_question!="":
-            response = agent.run(user_question)
-            st.write(f"Your question was :{user_question}")
-            st.write(f"response:{response}")
-            
-          
-main()
+        
+        # Question input
+        user_question = st.text_input("Ask about your data:")
+        if user_question:
+            try:
+                response = agent.run(user_question)
+                st.subheader("Analysis Result")
+                st.write(response)
+            except Exception as e:
+                st.error(f"Error analyzing data: {str(e)}")
 
-
+if __name__ == "__main__":
+    main()

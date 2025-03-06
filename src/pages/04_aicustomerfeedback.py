@@ -23,7 +23,10 @@ model = genai.GenerativeModel(
   model_name="gemini-1.5-flash",
   generation_config=generation_config,
 )
-
+st.set_page_config(
+        page_title="AI Sentiment Analyzer",
+        page_icon="👩‍💼"
+    )
 st.title("AI Customer Feedback & Sentiment Analysis Tool")
 st.subheader("Analyze and gain insights from customer feedback")
 
