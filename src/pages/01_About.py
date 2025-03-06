@@ -2,15 +2,34 @@ import streamlit as st
 from PIL import Image
 import os
 
-def load_image(image_path):
-    """Safe image loading with error handling"""
+def load_image(image_name):
+    """Universal image loader for local/cloud"""
     try:
-        return Image.open(image_path)
-    except FileNotFoundError:
-        st.error(f"Image not found: {image_path}")
+        # Get current script location
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # Path construction for Streamlit Cloud
+        cloud_path = os.path.join(
+            os.path.dirname(current_dir),  # Goes up from /pages to /src
+            "Images",
+            image_name
+        )
+        
+        # Path for local development
+        local_path = os.path.join("src", "Images", image_name)
+        
+        # Try both paths
+        for path in [cloud_path, local_path]:
+            try:
+                return Image.open(path)
+            except FileNotFoundError:
+                continue
+                
+        st.error(f"Image '{image_name}' not found in: {cloud_path} | {local_path}")
         return None
+        
     except Exception as e:
-        st.error(f"Error loading image: {str(e)}")
+        st.error(f"Image loading error: {str(e)}")
         return None
     
 def main():
@@ -24,8 +43,7 @@ def main():
     # --- Header Section ---
     col1, col2 = st.columns([1, 2])
     with col1:
-        img_path = "Images/image01.jpg"  # Assuming images folder is in the same directory
-        profile_img = load_image(img_path)
+        profile_img = load_image("image01.jpg")
         if profile_img:
             st.image(profile_img, width=250, caption="Profile Picture")
     with col2:
@@ -93,8 +111,7 @@ def main():
         - Developed novel hybrid model using Unet 
         - Achieved 98% accuracy
         """)
-        img_path = "Images/Image02.jpg"  # Assuming images folder is in the same directory
-        profile_img2 = load_image(img_path)
+        profile_img2 = load_image("Image02.jpg")
         if profile_img2:
             st.image(profile_img2, width=300, caption="SIH")
 
@@ -103,9 +120,8 @@ def main():
         **GDG On campus Dronacharya Group of Insitution**
         - Lead for communiy 2024-25
         - Responsible for orchestrating events
-        """)
-        img_path = "Images/Image03.jpg"  # Assuming images folder is in the same directory
-        profile_img = load_image(img_path)
+        """) 
+        profile_img2 = load_image("Image03.jpg")
         if profile_img2:
             st.image(profile_img2, width=300, caption="Community image")
     
@@ -120,7 +136,7 @@ def main():
     }
     </style>
     <div class="footer">
-        Made with ❤️ by Kartikeya Prasad | © 2024 All rights reserved
+        Made with ❤️ by Kartikeya Prasad | © 2025 All rights reserved
     </div>
     """, unsafe_allow_html=True)
 
