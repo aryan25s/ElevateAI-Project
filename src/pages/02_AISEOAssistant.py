@@ -9,11 +9,18 @@ import os
 
 from dotenv import load_dotenv
 load_dotenv()  # Load before using the API key
-api_key = os.getenv("GOOGLE_API_KEY")
-
-# Set your Google Gemini API Key
-google_gemini_key = api_key
-genai.configure(api_key=google_gemini_key)
+try:
+    # Use standard environment variable name
+    api_key = os.getenv("GOOGLE_API_KEY")
+    
+    if not api_key:
+        st.error("API key not found! Check your .env file")
+        st.stop()
+        
+    genai.configure(api_key=api_key)
+except Exception as e:
+    st.error(f"Configuration error: {str(e)}")
+    st.stop()
 
 generation_config = {
   "temperature": 2,
@@ -46,6 +53,13 @@ response = model.generate_content(prompts_parts)
 sumbit_button = st.button("Generate Blog")
 
 if sumbit_button:
-    st.write(response.text)
+    if not user_input.strip():
+        st.warning("Please enter some text first!")
+    else:
+        try:
+         st.subheader("SEO Recommendations")
+         st.write(response.text)
+        except Exception as e:
+            st.error(f"API Error: {str(e)}")
 
 st.caption("<p style ='text-align:center'>Made with ❤️ by Kartikeya</p>",unsafe_allow_html=True)
