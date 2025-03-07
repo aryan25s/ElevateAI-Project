@@ -1,7 +1,7 @@
 # **Elevate.AI**
 
 
-Elevating the bussiness by leveraging the LLMS
+Elevating the business by leveraging the LLMS
 [Visit Website](https://elevatea.streamlit.app/)
 
 Elevate.AI leverages LLM to support small startup and student innovation hub, Join us for this amazing journey.
