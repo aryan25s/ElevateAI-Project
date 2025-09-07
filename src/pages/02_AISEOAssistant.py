@@ -62,4 +62,4 @@ if sumbit_button:
         except Exception as e:
             st.error(f"API Error: {str(e)}")
 
-st.caption("<p style ='text-align:center'>Made with ❤️ by Kartikeya</p>",unsafe_allow_html=True)
+st.caption("<p style ='text-align:center'>Made with ❤️ by Aryan</p>",unsafe_allow_html=True)

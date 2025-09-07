@@ -34,7 +34,7 @@ def load_image(image_name):
     
 def main():
     st.set_page_config(
-        page_title="Kartikeya Prasad - Portfolio",
+        page_title="Aryan Pradhan - Portfolio",
         page_icon="🎓",
         layout="wide"
     )
@@ -43,87 +43,57 @@ def main():
     # --- Header Section ---
     col1, col2 = st.columns([1, 2])
     with col1:
-        profile_img = load_image("image01.jpg")
+        profile_img = load_image("image1.jpg")
         if profile_img:
             st.image(profile_img, width=250, caption="Profile Picture")
     with col2:
-        st.title("Kartikeya Prasad")
-        st.header("AI/ML Undergraduate Student")
-        st.write("🔗 [LinkedIn](https://www.linkedin.com/in/kartikeya-prasad-41468b28b/) | 💻 [GitHub](https://github.com/kartikf4) | 📧 kartikeyaprasad407@email.com")
+        st.title("Aryan Pradhan")
+        st.header("CSE-AI/ML Undergraduate Student")
+        st.write("🔗 [LinkedIn](https://www.linkedin.com/in/aryanp25/) | 💻 [GitHub](https://github.com/aryan25s) | 📧 aruupradhan2025@gmail.com")
         st.markdown("---")
-        st.write("""
-        🚀 Passionate AI/ML undergraduate with expertise in:
-        - Natural Language Processing
-        - Computer Vision
-        - Deep Learning Architectures
-        - Data Science Applications
-        """)    
+            
     st.markdown("## 🎓 Education & Qualifications")
     
     edu_col1, edu_col2 = st.columns(2)
     
     with edu_col1:
-        st.subheader("B.Tech in Artificial Intelligence & Machine Learning")
+        st.subheader("B.Tech in Computer Science and Engineering with Artificial Intelligence & Machine Learning")
         st.caption("Dronacharya Group of Institutions | 2022-2026 (Expected)")
-        st.write("""
-        - **Relevant Coursework**:
-          - Deep Learning
-          - Neural Networks
-          - Statistical Modeling
-          - Big Data Analytics
-        """)
+        
     st.markdown("## 💻 Technical Skills")
-    
-    skills_col1, skills_col2, skills_col3 = st.columns(3)
-    
-    with skills_col1:
-        st.markdown("### 🤖 Machine Learning")
-        st.write("""
-        - TensorFlow
-        - PyTorch
-        - Scikit-learn
-        - OpenCV
-        """)
-        
-    with skills_col2:
-        st.markdown("### 📊 Data Science")
-        st.write("""
-        - Pandas
-        - NumPy
-        - SQL
-        - Tableau
-        """)
-        
-    with skills_col3:
-        st.markdown("### 🛠 Development")
-        st.write("""
-        - Python
-        - Java
-        - Docker
-        - Git/GitHub
-        """)
-    
-    # --- Projects & Achievements ---
-    st.markdown("## 🏆 Notable Projects & Achievements")
-    with st.expander("SIH Finalist"):
-        st.write("""
-        **Finalist of Smart India Hackathon**
-        - Developed novel hybrid model using Unet 
-        - Achieved 98% accuracy
-        """)
-        profile_img2 = load_image("Image02.jpg")
-        if profile_img2:
-            st.image(profile_img2, width=300, caption="SIH")
 
-    with st.expander("Community Leader"):
-        st.write("""
-        **GDG On campus Dronacharya Group of Insitution**
-        - Lead for communiy 2024-25
-        - Responsible for orchestrating events
-        """) 
-        profile_img2 = load_image("Image03.jpg")
-        if profile_img2:
-            st.image(profile_img2, width=300, caption="Community image")
+
+    skills_col1, skills_col2, skills_col3 = st.columns(3)
+
+    with skills_col1:
+        st.markdown("### 🤖 AI & Machine Learning")
+        st.markdown("""
+        - Large Language Models (LLMs)  
+        - Gemini API  
+        - AI Tools (Content Generation, SEO Optimization)  
+        - Sentiment & Data Trend Analysis  
+        """)
+
+    with skills_col2:
+        st.markdown("### 📊 Data Science & Analysis")
+        st.markdown("""
+        - Pandas (Basic)  
+        - NumPy (Basic)  
+        - Data Preprocessing & Visualization  
+        - Beginner-level Data Analysis  
+        """)
+
+    with skills_col3:
+        st.markdown("### 🛠 Development & Tools")
+        st.markdown("""
+        - Swift (Intermediate), C++, C, Python (Basic)  
+        - iOS App Development (Storyboard & SwiftUI)  
+        - Firebase (Integration, Offline-first Design, Network Monitoring)  
+        - Git & GitHub, Xcode, VS Code  
+        """)
+    
+    
+        
     
     # --- Footer ---
     st.markdown("---")
@@ -136,7 +106,7 @@ def main():
     }
     </style>
     <div class="footer">
-        Made with ❤️ by Kartikeya Prasad | © 2025 All rights reserved
+        Made with ❤️ by Aryan Pradhan | © 2025 All rights reserved
     </div>
     """, unsafe_allow_html=True)
 

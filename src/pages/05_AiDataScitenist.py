@@ -24,7 +24,7 @@ def main():
         st.write("*Unleash the power of your data!*")
         st.caption("""Upload your CSV file to analyze patterns and generate insights.""")
         st.divider()
-        st.caption("<p style='text-align:center'>Made with ❤️ by Kartikeya</p>", unsafe_allow_html=True)
+        st.caption("<p style='text-align:center'>Made with ❤️ by Aryan</p>", unsafe_allow_html=True)
 
     # File uploader
     user_csv = st.file_uploader("Upload CSV", type="csv")

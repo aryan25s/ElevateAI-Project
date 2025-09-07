@@ -43,4 +43,4 @@ sumbit_button = st.button("Generate Sentiment analysis")
 if sumbit_button:
     st.write(response.text)
 
-st.caption("<p style ='text-align:center'>Made with ❤️ by Kartikeya</p>",unsafe_allow_html=True)
+st.caption("<p style ='text-align:center'>Made with ❤️ by Aryan</p>",unsafe_allow_html=True)
