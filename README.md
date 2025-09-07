@@ -2,7 +2,7 @@
 
 
 Elevating the business by leveraging the LLMS  - 
-[Visit Website]([https://elevatea.streamlit.app/](https://elevateai-project-fjhnfnpwkdolcargkdpq6g.streamlit.app))
+[Visit Website](https://elevateai-project-fjhnfnpwkdolcargkdpq6g.streamlit.app)
 
 Elevate.AI leverages LLM to support small startup and student innovation hub, Join us for this amazing journey.
 Elevate.AI leverages Gemini Api to provide you quick responses and this is just a visison as of now. we are working to improve this application day by day.
@@ -68,7 +68,8 @@ Build Loyalty: Respond to feedback quickly to foster trust and community.
 
 **Time-Saving:** Automate repetitive tasks and focus on innovation.
 
-# [**Start Elevating Today 🌟**]([https://elevatea.streamlit.app/](https://elevateai-project-fjhnfnpwkdolcargkdpq6g.streamlit.app))
+# [**Start Elevating Today 🌟**](https://elevateai-project-fjhnfnpwkdolcargkdpq6g.streamlit.app)
 
 #### **Note: the application is still under working and the current website gives a idea how it's going to work** 
+
 
